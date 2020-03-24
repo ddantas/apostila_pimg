@@ -1,0 +1,290 @@
+\documentclass{book}
+
+\pagenumbering{roman} 
+\pagestyle{empty}
+
+% Notas de aula
+%
+% Template criado em 24/9/2013
+% Daniel Oliveira Dantas
+%
+% Ctrl+x 8 , c = ç
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, brazil]{babel}
+
+\usepackage{listings}
+\lstset{
+  language=C,                % choose the language of the code
+  numbers=none,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers.        
+  numbersep=10pt,                  % how far the line-numbers are from the code
+  %backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+}
+
+%formatacao
+
+\newcommand{\TAB}{{\hspace*{1cm}}}
+\newcommand{\NEWLINE}{~\\}
+\newcommand{\BV}{\begin{verbatim}}
+\newcommand{\EV}{\end{verbatim}}
+
+%tipos de dados
+
+\newcommand{\VOID}{{\tt void}}
+\newcommand{\CHAR}{{\tt char}}
+\newcommand{\INT}{{\tt int}}
+\newcommand{\FLOAT}{{\tt float}}
+\newcommand{\DOUBLE}{{\tt double}}
+
+\newcommand{\LONGINT}{{\tt long int}}
+
+%operadores
+
+\newcommand{\AND}{{\tt \&\&}}
+\newcommand{\OR}{{\tt ||}}
+
+\newcommand{\LNOT}{{\tt \~{}}}
+\newcommand{\LAND}{{\tt \&}}
+\newcommand{\LOR}{{\tt |}}
+\newcommand{\LXOR}{{\tt \^{}}}
+
+%palavras reservadas
+
+\newcommand{\IF}{{\tt if}}
+\newcommand{\ELSE}{{\tt else}}
+
+\newcommand{\SWITCH}{{\tt switch}}
+\newcommand{\CASE}{{\tt case}}
+
+\newcommand{\FOR}{{\tt for}}
+\newcommand{\WHILE}{{\tt while}}
+
+\newcommand{\BREAK}{{\tt break}}
+
+\newcommand{\TRUE}{{\tt true}}
+\newcommand{\FALSE}{{\tt false}}
+
+\newcommand{\MAIN}{{\tt main}}
+
+\newcommand{\SIZEOF}{{\tt sizeof}}
+
+% funcoes
+
+\newcommand{\SIN}{{\tt sin}}
+\newcommand{\COS}{{\tt cos}}
+\newcommand{\TAN}{{\tt tan}}
+\newcommand{\LOG}{{\tt log}}
+
+\newcommand{\PRINTF}{{\tt printf}}
+\newcommand{\SCANF}{{\tt scanf}}
+
+\newcommand{\SPRINTF}{{\tt sprintf}}
+\newcommand{\SSCANF}{{\tt sscanf}}
+
+\newcommand{\FPRINTF}{{\tt fprintf}}
+\newcommand{\FSCANF}{{\tt fscanf}}
+
+\newcommand{\GETS}{{\tt gets}}
+\newcommand{\FGETS}{{\tt fgets}}
+
+\newcommand{\FOPEN}{{\tt fopen}}
+\newcommand{\FCLOSE}{{\tt fclose}}
+
+\newcommand{\SYSTEM}{{\tt system}}
+
+%renewcommand
+
+\renewcommand\chaptername{Capítulo}
+\renewcommand\lstlistingname{Listagem}
+
+
+
+\title{Notas de aula de Introdução à Ciência da Computação}
+\author{Daniel Oliveira Dantas}
+\date{6 de novembro de 2013}
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Índice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagestyle{plain}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Introdução ao C
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{intro.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Controle de fluxo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{flow.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Indentação
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{indent.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Entrada e saída
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{io.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Vetores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{array.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Funções
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{function.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Exercícios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{exercise.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capítulo: Exemplos de programas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapter{Exemplos de programas}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: pause.cpp
+
+%\section{pause.cpp}
+
+%\lstinputlisting[caption=series.cpp]{src/pause.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: ascii.cpp
+
+%\section{ascii.cpp}
+
+%\lstinputlisting[caption=ascii.cpp]{src/ascii.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: dado.cpp
+
+%\section{dado.cpp}
+
+%\lstinputlisting[caption=dado.cpp]{src/dado.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: primos.cpp
+
+%\section{primos.cpp}
+
+%\lstinputlisting[caption=series.cpp]{src/primos.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: series.cpp
+
+%\section{series.cpp}
+
+%\lstinputlisting[caption=series.cpp]{src/series.cpp}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: generate.cpp
+
+%\section{generate.cpp}
+
+%\lstinputlisting[caption=generate.cpp]{src/generate.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Seção: ordena.cpp
+
+%\section{ordena.cpp}
+
+%\lstinputlisting[caption=ordena.cpp]{src/ordena.cpp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Apêndice: Tabela ASCII
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\chapter{Tabela ASCII}
+
+{\tt\small
+
+\begin{tabular}{|lll|lll|lll|lll|}
+
+  Dec &   Hex & Char &  Dec &   Hex & Char &  Dec &   Hex & Char &  Dec &   Hex & Char \\
+
+    0 &  0x00 &  NUL &   32 &  0x20 &      &   64 &  0x40 &    @ &   96 &  0x60 &    ` \\
+    1 &  0x01 &  STX &   33 &  0x21 &    ! &   65 &  0x41 &    A &   97 &  0x61 &    a \\
+    2 &  0x02 &  SOT &   34 &  0x22 &    " &   66 &  0x42 &    B &   98 &  0x62 &    b \\
+    3 &  0x03 &  ETX &   35 &  0x23 &   \# &   67 &  0x43 &    C &   99 &  0x63 &    c \\
+    4 &  0x04 &  EOT &   36 &  0x24 &   \$ &   68 &  0x44 &    D &  100 &  0x64 &    d \\
+    5 &  0x05 &  ENQ &   37 &  0x25 &   \% &   69 &  0x45 &    E &  101 &  0x65 &    e \\
+    6 &  0x06 &  ACK &   38 &  0x26 &   \& &   70 &  0x46 &    F &  102 &  0x66 &    f \\
+    7 &  0x07 &  BEL &   39 &  0x27 &    ' &   71 &  0x47 &    G &  103 &  0x67 &    g \\
+    8 &  0x08 &   BS &   40 &  0x28 &    ( &   72 &  0x48 &    H &  104 &  0x68 &    h \\
+    9 &  0x09 &   HT &   41 &  0x29 &    ) &   73 &  0x49 &    I &  105 &  0x69 &    i \\
+   10 &  0x0A &   LF &   42 &  0x2A &    * &   74 &  0x4A &    J &  106 &  0x6A &    j \\
+   11 &  0x0B &   VT &   43 &  0x2B &    + &   75 &  0x4B &    K &  107 &  0x6B &    k \\
+   12 &  0x0C &   FF &   44 &  0x2C &    , &   76 &  0x4C &    L &  108 &  0x6C &    l \\
+   13 &  0x0D &   CR &   45 &  0x2D &    - &   77 &  0x4D &    M &  109 &  0x6D &    m \\
+   14 &  0x0E &   SO &   46 &  0x2E &    . &   78 &  0x4E &    N &  110 &  0x6E &    n \\
+   15 &  0x0F &   SI &   47 &  0x2F &    / &   79 &  0x4F &    O &  111 &  0x6F &    o \\
+   16 &  0x10 &  DLE &   48 &  0x30 &    0 &   80 &  0x50 &    P &  112 &  0x70 &    p \\
+   17 &  0x11 &  DC1 &   49 &  0x31 &    1 &   81 &  0x51 &    Q &  113 &  0x71 &    q \\
+   18 &  0x12 &  DC2 &   50 &  0x32 &    2 &   82 &  0x52 &    R &  114 &  0x72 &    r \\
+   19 &  0x13 &  DC3 &   51 &  0x33 &    3 &   83 &  0x53 &    S &  115 &  0x73 &    s \\
+   20 &  0x14 &  DC4 &   52 &  0x34 &    4 &   84 &  0x54 &    T &  116 &  0x74 &    t \\
+   21 &  0x15 &  NAK &   53 &  0x35 &    5 &   85 &  0x55 &    U &  117 &  0x75 &    u \\
+   22 &  0x16 &  SYN &   54 &  0x36 &    6 &   86 &  0x56 &    V &  118 &  0x76 &    v \\
+   23 &  0x17 &  ETB &   55 &  0x37 &    7 &   87 &  0x57 &    W &  119 &  0x77 &    w \\
+   24 &  0x18 &  CAN &   56 &  0x38 &    8 &   88 &  0x58 &    X &  120 &  0x78 &    x \\
+   25 &  0x19 &   EM &   57 &  0x39 &    9 &   89 &  0x59 &    Y &  121 &  0x79 &    y \\
+   26 &  0x1A &  SUB &   58 &  0x3A &    : &   90 &  0x5A &    Z &  122 &  0x7A &    z \\
+   27 &  0x1B &  ESC &   59 &  0x3B &    ; &   91 &  0x5B &    [ &  123 &  0x7B &   \{ \\
+   28 &  0x1C &   FS &   60 &  0x3C &    < &   92 &  0x5C &    \ &  124 &  0x7C &    | \\
+   29 &  0x1D &   GS &   61 &  0x3D &    = &   93 &  0x5D &    ] &  125 &  0x7D &   \} \\
+   30 &  0x1E &   RS &   62 &  0x3E &    > &   94 &  0x5E & \verb|^| &  126 &  0x7E &    ~ \\
+   31 &  0x1F &   US &   63 &  0x3F &    ? &   95 &  0x5F & \verb|_| &  127 &  0x7F & DEL \\
+
+\end{tabular}
+
+}
+
+\end{document}
+
