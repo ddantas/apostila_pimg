@@ -1,0 +1,79 @@
+\chapter{Introdução}
+
+
+\setcounter{page}{1}    % set page to 1 again to start arabic count
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{O que é processamento de imagens}
+
+\begin{easylist}
+  & O que é uma imagem?
+  && Uma matriz
+  && Uma função
+  && Esses conceitos podem ser generalizados para mais dimensões
+  & Uma definição de processamento de imagens: processo em que tanto a entrada quanto a saída são imagens.
+  && Essa definição não engloba, porém, processos como valor médio da imagem, extração de pontos característicos, alguns tipos de reconstrução 3D, aplicações de segurança que detectam atividades suspeitas, reconhecimento de gestos, reconhecimento de caracteres (OCR) e outras aplicações consideradas do campo de visão computacional.
+  & Uma definição mais abrangente: processos de baixo, médio e alto nível em que tanto a entrada quanto a saída são imagens.
+  && Baixo nível: envolve operações primitivas, de redução de ruído, aumento de contraste, aumento de nitidez (\textit{sharpening}), \textit{thresholding} etc. Nos processos de baixo nível, tanto a entrada quanto a saída são imagens.
+  && Médio nível: envolve tarefas como segmentação (particionamento), redução dos objetos a uma descrição ou formato apropriado para processamento, classificação (reconhecimento) de objetos. A entrada são imagens, e a saída são atributos extraídos dessas imagens, como bordas, contornos, características ou classe de objetos individuais.
+  && Alto nível: envolve atividades cognitivas associadas com a visão. Cognição envolve atividades como memória, compreensão, aprendizado, raciocínio, atenção, resolução de problemas e tomada de decisão.
+\end{easylist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Origens do processamento digital de imagens}
+
+\begin{easylist}
+  & 1920: \textit{Bartlane cable picture transmission system}, 5 tons de cinza.
+  & 1929: idem, 15 tons de cinza.
+  & 1948: invenção do transistor.
+  & 1950 a 1960: invenção das linguagens de programação de alto nível, COBOL e Fortran.
+  & 1958: invenção do circuito integrado.
+  & 1964: primeira foto da Lua tirada de uma sonda.
+  & 1968 a 1971: invenção dos primeiros microprocessadores, CADC, TMS1000, 4004.
+  & 1969: invenção do CCD.
+  & 1971: primeira tomografia computadorizada
+\end{easylist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Áreas que usam processamento digital de imagens}
+
+\begin{easylist}
+  & Medicina, astronomia, meteorologia, indústria, fotografia, editoração, segurança etc.
+  & Técnicas de obtenção de imagem:
+  && Eletromagnética: luz, radiação UV, radiação IR, raios X, raios gama, microondas.
+  && Eletrônica: microscopia eletrônica.
+  && Mecânica: ondas acústicas, ultrassom.
+  && Sintética: computação gráfica, fractais.
+\end{easylist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Passos fundamentaus no processamento digital de imagens}
+
+\begin{easylist}
+& Aquisição
+& Melhoramento (\textit{image enhancement)}
+& Restauração
+& Processamento de cores
+& \textit{Wavelets} e processamento multirresolução
+& Compressão
+& Processamento morfológico
+& Segmentação
+& Representação e descrição
+& Reconhecimento de objetos
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Componentes de um sistema de processamento de imagens}
+
+\begin{easylist}
+& Sensores + \textit{hardware} especializado
+& Computador + GPU
+& Armazenamento em massa
+& \textit{Software} de processamento de imagens
+& Monitor de imagem
+& Impressora
+& Rede
+\end{easylist}

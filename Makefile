@@ -11,8 +11,8 @@ all: pimg.pdf
 pimg.ps: pimg.dvi
 	dvips -o $(FILENAME).ps $(FILENAME).dvi
 
-pimg.pdf: pimg.ps
-	ps2pdf $(FILENAME).ps $(FILENAME).pdf
+pimg.pdf: *.tex
+	pdflatex $(FILENAME).tex
 	evince $(FILENAME).pdf
 
 pimg.dvi: clean $(FILENAME).tex
