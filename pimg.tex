@@ -43,6 +43,9 @@ Style2*=$\bullet$ ,Style3*=$\circ$ ,Style4*=\tiny$\blacksquare$ )
 % ddantas, 24/03/2020
 \usepackage{graphicx}
 
+% Adicionado para permitir a inserção de figuras
+% ddantas, 31/03/2020
+\usepackage{subcaption}
 
 %formatacao
 
@@ -152,10 +155,10 @@ Style2*=$\bullet$ ,Style3*=$\circ$ ,Style4*=\tiny$\blacksquare$ )
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Capítulo: Indentação
+%Capítulo: Image enhancement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{indent.tex}
+\input{03_enhancement.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,6 +249,21 @@ Style2*=$\bullet$ ,Style3*=$\circ$ ,Style4*=\tiny$\blacksquare$ )
 %\section{ordena.cpp}
 
 %\lstinputlisting[caption=ordena.cpp]{src/ordena.cpp}
+
+\nocite{gonzalez2006image,
+dougherty2003handson,
+learning_opencv,
+Duda:2001,
+Costa:2001,
+Jain1995machine,
+soille1999morphological,
+Tufte:83,
+GeometryMultiple,
+MultipleView,
+3dComputer}
+
+\bibliography{refs}
+\bibliographystyle{plain}
 
 
 \end{document}

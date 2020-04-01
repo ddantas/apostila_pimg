@@ -13,6 +13,9 @@ pimg.ps: pimg.dvi
 
 pimg.pdf: *.tex
 	pdflatex $(FILENAME).tex
+	bibtex $(FILENAME)
+	pdflatex $(FILENAME).tex
+	pdflatex $(FILENAME).tex
 	evince $(FILENAME).pdf
 
 pimg.dvi: clean $(FILENAME).tex
