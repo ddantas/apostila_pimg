@@ -150,5 +150,163 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
   
 \end{easylist}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Suavização}
+
+\begin{easylist}
+
+  & Filtro de média:
+
+\end{easylist}
+
+  \[ \frac 1 9
+    \begin{bmatrix}
+      1 & 1 & 1 \\
+      1 & 1 & 1 \\
+      1 & 1 & 1 \\
+    \end{bmatrix}  
+  \]
+
+\begin{easylist}
+
+  & Filtro Gaussiano ou suavização Gaussiana ou \textit{blur}:
+
+\end{easylist}
+
+  \[ \frac 1 {16}
+    \begin{bmatrix}
+      1 & 2 & 1 \\
+      2 & 4 & 2 \\
+      1 & 2 & 1 \\
+    \end{bmatrix}  
+  \]
+
+  \[ \frac 1 4
+    \begin{bmatrix}
+      1 & 2 & 1 \\
+    \end{bmatrix}  
+  \]
+  \[ \frac 1 4
+    \begin{bmatrix}
+      1 \\
+      2 \\
+      1 \\
+    \end{bmatrix}  
+  \]
+  
+\begin{easylist}
+
+  & Filtro de estatísticas de ordem: mediana, máximo, mínimo etc.
+
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\emph{Sharpening}}
+
+\begin{easylist}
+
+  & Derivada de primeira ordem:
+
+  \[ \frac {\partial f}{\partial x} = \frac {df}{dx} = f(x+1) - f(x) \]
+
+  & Derivada de segunda ordem:
+
+  \[ \frac {\partial^2 f}{\partial x^2} = f(x+1)  + f(x-1) - 2f(x) \]
+
+  & Laplaciano:
+
+  \[ \nabla^2 f = \frac {\partial^2 f}{\partial x^2} + \frac {\partial^2 f}{\partial y^2} \]
+
+  \[ \frac {\partial^2 f}{\partial x^2} = f(x+1, y) + f(x-1, y) - 2f(x, y) \]
+
+  \[ \frac {\partial^2 f}{\partial y^2} = f(x, y+1) + f(x, y-1) - 2f(x, y) \]
+
+  \[ \nabla^2 f = f(x+1, y) + f(x-1, y) + f(x, y+1) + f(x, y-1) - 4f(x, y) \]
+
+  & \textit{Sharpening}:
+
+  \[ g(x, y) = f(x, y) - \nabla^2 f \]
+
+\end{easylist}
+
+  \[
+    \begin{bmatrix}
+       0 & -1 &  0 \\
+      -1 &  5 & -1 \\
+       0 & -1 &  0 \\
+    \end{bmatrix}  
+  \]
+
+\begin{easylist}
+
+  & \textit{Unsharp mask}:
+
+  \[ g(x, y) = (1-\alpha) f(x, y) - \alpha \overline f (x, y), \alpha \in [0.0, 1.0] \]
+
+  onde $\overline f (x, y)$ denota a imagem $f (x, y)$ após uma operação de \textit{blur}.
+
+  & O uso do gradiente:
+  && Gradiente de um campo escalar é um campo vetorial que aponta para a direção de sua maior taxa de crescimento. Sua magnitude é a taxa de crescimento.
+
+  \[ \nabla f =
+    \begin{bmatrix}
+      \frac {\partial f}{\partial x} \\
+      \frac {\partial f}{\partial y} \\
+    \end{bmatrix}  
+  \]
+    
+  && A magnitude do gradiente é dada por
+
+  \[ \operatorname(mag)(\nabla f) = \sqrt{
+      \left(\frac {\partial f}{\partial x}\right)^2 +
+      \left(\frac {\partial f}{\partial y}\right)^2 }
+  \]
+
+  mas na prática, para evitar os quadrados e a raiz quadrada, se usa apenas 
+
+  \[ \operatorname{mag}(\nabla f) =
+      \left|\frac {\partial f}{\partial x}\right| +
+      \left|\frac {\partial f}{\partial y}\right|
+  \]
+
+  && Considere a vizinhança a seguir:
+
+\end{easylist}
+
+  \begin{table}[!h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+        \hline
+        $p_1$ & $p_2$ & $p_3$ \\
+        \hline
+        $p_4$ & $p_5$ & $p_6$ \\
+        \hline
+        $p_7$ & $p_8$ & $p_9$ \\
+        \hline
+  \end{tabular}
+  %\caption{Disposição dos pixels na vizinhança de $(x, y)$.}
+\end{table}
+
+\begin{easylist}
+
+  O exmplo mais simples de cálculo do gradiente é
+
+  \[ \operatorname{mag}(\nabla f) = |p_6 - p_5| + |p_8 - p_5| \]
+
+  && \textit{Robert's cross gradient operator}:
+
+  \[ \operatorname{mag}(\nabla f) = \sqrt{(p_9 - p_5)^2 + (p_8 - p_6)^2} \]
+  
+  ou, para simplificar,
+  
+  \[ \operatorname{mag}(\nabla f) = |p_9 - p_5| + |p_8 - p_6| \]
+  
+\end{easylist}
+  
+
+
+
   
 
