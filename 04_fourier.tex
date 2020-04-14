@@ -1,0 +1,76 @@
+\chapter{\emph{Image Enhancement} (melhoramento) no domínio da frequência}
+
+Capítulo 4 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006image}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+
+\begin{easylist}
+
+  & Transformada de Fourier é uma maneira de representar um sinal como uma integral de senos e cossenos multiplicados por uma função de peso. Um sinal pode ser convertido para sua representação transformada e reconvertido de volta para o domínio original sem perda de informação. Também é possível realizar operações como filtragens na representação transformada e reconverter de volta para o domínio original.
+
+\end{easylist}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A transformada de Fourier}
+
+\begin{easylist}
+
+  & Transformada de Fourier $g(u)$ de uma função contínua de uma única variável é dada pela fórmula
+
+  \[ g(u) = \int^{\infty}_{-\infty} f(x) e^{-j2\pi ux} dx \]
+
+  onde $j = \sqrt{-1}$, De maneira análoga, dado $g(u)$, podemos obter $f(x)$ através da transformada inversa de Fourier
+  
+  \[ f(x) = \int^{\infty}_{-\infty} g(u) e^{ j2\pi ux} du \]
+
+\vspace{1cm}
+  
+  & Essas operações possuem uma versão para duas variáveis
+
+  \[ g(u, v) = \int^{\infty}_{-\infty}\int^{\infty}_{-\infty} f(x, y) e^{-j2\pi (ux + vy)} dx dy \]
+
+  e sua inversa
+
+  \[ f(x, y) = \int^{\infty}_{-\infty}\int^{\infty}_{-\infty} g(u, v) e^{ j2\pi (ux + vy)} dx dy \]
+
+  & Muitas vezes é mais fácil manipular as versões contínuas da transformada de Fourier, mas para trabalhar com imagens, usamos suas versões discretas
+
+  \[ g(u) = \frac 1M \sum^{M-1}_{x=0} f(x) e^{-j2\pi ux/M} \textrm{para u de 0 a $M-1$} \]
+
+  e sua inversa
+
+  \[ f(x) =          \sum^{M-1}_{x=0} g(u) e^{ j2\pi ux/M} \textrm{para x de 0 a $M-1$} \]
+
+  & O conceito de domínio da frequência segue a fórmula de Euler
+
+  \[ e^{j\theta} = \cos\theta + j\sin\theta \]
+
+  & Substituindo na transformada direta discreta, temos
+
+  \[ g(u) = \frac 1M \sum^{M-1}_{x=0} f(x) (\cos (2\pi ux/M) -j\sin (2\pi ux/M)) \]
+
+  & A transformada de Fourier discreta bidimensional pode ser calculada pela fórmula
+
+  \[ g(u, v) = \frac 1{MN} \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} f(x, y) e^{-j2\pi (ux/M + vy/N)} \].
+
+  Nesse caso, a inversa pode ser calculada pela fórmula
+
+  \[ f(x, y) =             \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} g(u, v) e^{ j2\pi (ux/M + vy/N)} \].
+
+\clearpage
+  
+  & Substituindo a fórmula de Euler na transformada discreta bidimensional de Fourier, obtemos
+
+  \[ g(u, v) = \frac 1{MN} \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} f(x, y)
+      \cos\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right) -
+     j\sin\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right)   \]
+
+  e sua inversa
+
+  \[ f(x, y) =             \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} g(u, v)
+      \cos\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right) +
+     j\sin\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right)   \]
+
+\end{easylist}
+  
