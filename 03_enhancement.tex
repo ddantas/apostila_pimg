@@ -243,7 +243,7 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
 
   & \textit{Unsharp mask}:
 
-  \[ g(x, y) = (1-\alpha) f(x, y) - \alpha \overline f (x, y), \alpha \in [0.0, 1.0] \]
+  \[ g(x, y) = (1+\alpha) f(x, y) - \alpha \overline f (x, y), \alpha \in [0.0, 1.0] \]
 
   onde $\overline f (x, y)$ denota a imagem $f (x, y)$ após uma operação de \textit{blur}.
 
@@ -256,7 +256,9 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
       \frac {\partial f}{\partial y} \\
     \end{bmatrix}  
   \]
-    
+
+\clearpage
+  
   && A magnitude do gradiente é dada por
 
   \[ \operatorname(mag)(\nabla f) = \sqrt{
