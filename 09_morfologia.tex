@@ -8,7 +8,7 @@ Capítulo 9 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
 
 \begin{easylist}
 
-  & Morfologia Matemática deontao um conjunto de ferramentas úteis para representar e descrever formas de regiões da imagem, como bordas, esqueletos e casco convexo. Também são úteis como operações de pré e pós-processamento, como filtragem morfológica e afinamento.
+  & Morfologia Matemática denota um conjunto de ferramentas úteis para representar e descrever formas de regiões da imagem, como bordas, esqueletos e casco convexo. Também são úteis como operações de pré e pós-processamento, como filtragem morfológica e afinamento.
   
   & Duas operações fundamentais da Morfologia Matemática são erosão e dilatação.
 
@@ -96,9 +96,16 @@ ou
 
 \begin{easylist}
 
-  & O operador \textit{hit-miss} pelo elemento estruturante $B$ da imagem $f$ e denotado por $f \circledast B$ e é dado por
+  & O operador \textit{hit-miss} pelo elemento estruturante $B$ da imagem $f$ é denotado por $f \circledast B$ e é dado por
 
-  \[ f \circledast S = (f \ominus B) \cap (f^c \ominus B^c). \]
+  \[ f \circledast B = (f \ominus B) \cap (f^c \ominus B^c). \]
+
+  & Considere que $B_\alpha$ é o elemento estruturante $B$ rotacionado pelo ângulo $\alpha$ no sentido anti-horário. Poderíamos obter todos os cantos da imagem através da operação abaixo.
+
+  \[ (f \circledast B_{0})  \cup
+     (f \circledast B_{90}) \cup
+     (f \circledast B_{180}) \cup
+     (f \circledast B_{270})      \]
 
 \end{easylist}
 
@@ -143,5 +150,36 @@ ou
   \medskip
 
   onde $X_0 = p$ e $B$ é um elemento estruturante adequado.  
+
+\clearpage
+  
+  & Rotulação de componentes conexos em imagens binárias: o processo de rotulação consiste em preencher com uma cor ou rótulo diferente cada um dos componentes conexos de uma imagem. O rótulo 0 é reservado para o \textit{background}. O algoritmo abaixo pode ser usado nesse processo. Recebe como entrada uma imagem binária cujos pixels têm valores no conjunto ${0, 255}$.
+
+  \medskip
+  \ind label = 1
+  
+  \ind \textit{foreach} pixel p
+  
+  \ind \ind \textit{if} value(p) == 255
+  
+  \ind \ind \ind value(p) = label
+
+  \ind \ind \ind Q.enqueue(p)
+
+  \ind \ind \ind \textit{while} !Q.empty()
+
+  \ind \ind \ind \ind c = Q.dequeue()
+
+  \ind \ind \ind \ind \textit{foreach} d = neighbor(c)
+
+  \ind \ind \ind \ind \ind \textit{if} value(d) == 255
+
+  \ind \ind \ind \ind \ind \ind value(d) == label
+  
+  \ind \ind \ind \ind \ind \ind Q.enqueue(d)
+
+  \ind \ind \ind label++
+  
+  \medskip
   
 \end{easylist}
