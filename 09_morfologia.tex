@@ -120,7 +120,7 @@ ou
 
   \[ \beta_c(f) = (f \oplus B) - (f \ominus B). \]
 
-  & Preenchimento de buracos: Seja f um conjunto de pixels com valor 1 4-conectados ao redor de uma região de pixels com valor 0, ou seja, um buraco. Seja $p$ um pixel pertencente ao buraco. Nosso objetivo é preencher o buraco inteiro com pixels valor 1. O procedimento a seguir preenche o buraco:
+  & Preenchimento de buracos: Seja $A$ um conjunto de pixels com valor 1 4-conectados ao redor de uma região de pixels com valor 0, ou seja, um buraco. Seja $p$ um pixel pertencente ao buraco. Nosso objetivo é preencher o buraco inteiro com pixels valor 1. O procedimento a seguir preenche o buraco:
 
   \medskip
   \hspace{1cm}    \textit{do}
@@ -130,8 +130,18 @@ ou
   \hspace{1cm}    \textit{while} $X_k \neq X_{k-1}$
   \medskip
 
-  onde $X_0 = p$ e $B$ é o quadrado $3\times3$.
+  onde $X_0 = p$ e $B$ é o quadrado $3\times3$. Ao final, a união de $X_k$ e $A$ nos dá a região preenchida.
 
-  & Ao final, a união de $X_k$ e $A$ nos dá a região preenchida.
+  & Extração de componentes conexos: Seja $Y \subseteq A$ um componente conexo, e $p \in Y$ um pixel. O procedimento a seguir nos dá todos os pontos de $Y$:
+
+  \medskip
+  \hspace{1cm}    \textit{do}
+  
+  \hspace{1cm}\hspace{1cm}    $X_k = (X_{k-1} \oplus B) \cap A, k = 1, 2, 3\dots$
+
+  \hspace{1cm}    \textit{while} $X_k \neq X_{k-1}$
+  \medskip
+
+  onde $X_0 = p$ e $B$ é um elemento estruturante adequado.  
   
 \end{easylist}
