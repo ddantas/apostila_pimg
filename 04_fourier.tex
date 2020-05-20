@@ -23,11 +23,19 @@ Seção 7 de Ramirez, \textit{The FFT: Fundamentals and Concepts}~\cite{ramirez1
 
   \[ g(u) = \int^{\infty}_{-\infty} f(x) e^{-j2\pi ux} dx \]
 
-  onde $j = \sqrt{-1}$, De maneira análoga, dado $g(u)$, podemos obter $f(x)$ através da transformada inversa de Fourier
+  onde $j = \sqrt{-1}$. É usual denotar a transformada de Fourier como a seguir
+
+  \[ g(u) = \mathfrak{F} (f(x)). \]
+
+  De maneira análoga, dado $g(u)$, podemos obter $f(x)$ através da transformada inversa de Fourier
   
   \[ f(x) = \int^{\infty}_{-\infty} g(u) e^{ j2\pi ux} du \]
 
-\vspace{1cm}
+que por sua vez pode ser denotada por
+
+  \[ f(x) = \mathfrak{F}^{-1} (g(u)). \]
+
+%\vspace{1cm}
   
   & Essas operações possuem uma versão para duas variáveis
 
@@ -65,7 +73,7 @@ Seção 7 de Ramirez, \textit{The FFT: Fundamentals and Concepts}~\cite{ramirez1
 
   \[ f(x, y) =             \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} g(u, v) e^{ j2\pi (ux/M + vy/N)} \].
 
-\clearpage
+%\clearpage
   
   & Substituindo a fórmula de Euler na transformada discreta bidimensional de Fourier, obtemos
 

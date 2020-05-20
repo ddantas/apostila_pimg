@@ -1,0 +1,137 @@
+\chapter{Processamento morfológico de imagens}
+
+Capítulo 9 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006image}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+
+\begin{easylist}
+
+  & Morfologia Matemática deontao um conjunto de ferramentas úteis para representar e descrever formas de regiões da imagem, como bordas, esqueletos e casco convexo. Também são úteis como operações de pré e pós-processamento, como filtragem morfológica e afinamento.
+  
+  & Duas operações fundamentais da Morfologia Matemática são erosão e dilatação.
+
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Erosão e dilatação}
+
+\begin{easylist}
+
+  & Erosão: seja $f$ uma imagem digital em escala de cinza e $S$ um conjunto de pixels centrado na origem. Denotamos erosão por
+
+  \[ (f \ominus S)(x) = \min\{ f(x+z) | z \in S \} \]
+
+  onde $S$ é conhecido como elemento estruturante e $x$ são as coordenadas dos pixels de $f$.
+  
+  & Dilatação: seja $f$ uma imagem digital em escala de cinza e $S$ um conjunto de pixels centrado na origem. Denotamos dilatação por
+
+  \[ (f \oplus S)(x) = \max\{ f(x-z) | z \in S \} \]
+
+  onde $S$ é conhecido como elemento estruturante e $x$ são as coordenadas dos pixels de $f$.
+
+  & Dualidade: a erosão e dilatação são duais um do outro com relação ao complemento e reflexão do elemento estruturante na medida em que
+
+  \[ (f \ominus S)^c = f^c \oplus \hat{S} \]
+
+ou 
+  
+  \[ (f \oplus S)^c = f^c \ominus \hat{S} \]
+
+  onde o $c$ superescrito denota o complementar de imagens binárias ou a negativa de imagens em escala de cinza, e $\hat{S}$ denota a reflexão do elemento estruturante $S$ em relação à origem. Algumas implementações da dilatação e erosão podem não preservar a dualidade a depender de suas especificidades.
+
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Abertura e fechamento}
+
+\begin{easylist}
+
+  & Abertura de $f$ pelo elemento estruturante $S$ é denotada por $f \circ S$ e é definida por
+
+  \[ f \circ S = (f \ominus S) \oplus S. \]
+
+  & Fechamento de $f$ pelo elemento estruturante $S$ é denotada por $f \bullet S$ e é definida por
+
+  \[ f \bullet S = (f \oplus S) \ominus S. \]
+
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operador \textit{hit-miss}}
+
+\begin{easylist}
+
+  & O operador \textit{hit-miss} é um operador usado para detecção de formas (\textit{shape detection}). O elemento estruturante usado pode conter, além dos valores 0 e 1, o valor X, ou \textit{don't care}. O elemento estruturante
+
+  \end{easylist}
+
+  \[
+    B = 
+    \begin{bmatrix}
+      X & 0 & 0 \\
+      1 & 1 & 0 \\
+      X & 1 & X \\
+    \end{bmatrix}  
+  \]
+    
+\begin{easylist}
+
+  e suas rotações por múltiplos de $90^\circ$ pode ser usado para detectar cantos. Seu complemento, necessário no processo, é
+
+\end{easylist}
+  
+  \[
+    B = 
+    \begin{bmatrix}
+      X & 1 & 1 \\
+      0 & 0 & 1 \\
+      X & 0 & X \\
+    \end{bmatrix}  
+  \]
+
+\begin{easylist}
+
+  & O operador \textit{hit-miss} pelo elemento estruturante $B$ da imagem $f$ e denotado por $f \circledast B$ e é dado por
+
+  \[ f \circledast S = (f \ominus B) \cap (f^c \ominus B^c). \]
+
+\end{easylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algoritmos morfológicos básicos}
+
+\begin{easylist}
+
+  & Extração de borda: a borda de uma imagem f, denotada por $\beta(f)$, pode ser obtida por uma erosão de $f$ pelo elemento estruturante $B$, e depois fazendo a diferença entre $f$ e sua erosão, ou seja,
+
+  \[ \beta(f) = f - (f \ominus B). \]
+
+  São alternativas a esse operador  
+
+  \[ \beta_d(f) = (f \oplus B) - f \]
+
+  e
+
+  \[ \beta_c(f) = (f \oplus B) - (f \ominus B). \]
+
+  & Preenchimento de buracos: Seja f um conjunto de pixels com valor 1 4-conectados ao redor de uma região de pixels com valor 0, ou seja, um buraco. Seja $p$ um pixel pertencente ao buraco. Nosso objetivo é preencher o buraco inteiro com pixels valor 1. O procedimento a seguir preenche o buraco:
+
+  \medskip
+  \hspace{1cm}    \textit{do}
+  
+  \hspace{1cm}\hspace{1cm}    $X_k = (X_{k-1} \oplus B) \cap A^c, k = 1, 2, 3\dots$
+
+  \hspace{1cm}    \textit{while} $X_k \neq X_{k-1}$
+  \medskip
+
+  onde $X_0 = p$ e $B$ é o quadrado $3\times3$.
+
+  & Ao final, a união de $X_k$ e $A$ nos dá a região preenchida.
+  
+\end{easylist}
