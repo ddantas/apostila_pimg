@@ -153,7 +153,7 @@ ou
 
 \clearpage
   
-  & Rotulação de componentes conexos em imagens binárias: o processo de rotulação consiste em preencher com uma cor ou rótulo diferente cada um dos componentes conexos de uma imagem. O rótulo 0 é reservado para o \textit{background}. O algoritmo abaixo pode ser usado nesse processo. Recebe como entrada uma imagem binária cujos pixels têm valores no conjunto ${0, 255}$.
+  & Rotulação de componentes conexos em imagens binárias: o processo de rotulação consiste em preencher com uma cor ou rótulo diferente cada um dos componentes conexos de uma imagem. O rótulo 0 é reservado para o \textit{background}. O algoritmo abaixo pode ser usado nesse processo. Recebe como entrada uma imagem binária cujos pixels têm valores no conjunto $\{0, 255\}$.
 
   \medskip
   \ind label = 1
@@ -174,7 +174,7 @@ ou
 
   \ind \ind \ind \ind \ind \textit{if} value(d) == 255
 
-  \ind \ind \ind \ind \ind \ind value(d) == label
+  \ind \ind \ind \ind \ind \ind value(d) = label
   
   \ind \ind \ind \ind \ind \ind Q.enqueue(d)
 

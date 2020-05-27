@@ -25,7 +25,7 @@ Seção 7 de Ramirez, \textit{The FFT: Fundamentals and Concepts}~\cite{ramirez1
 
   onde $j = \sqrt{-1}$. É usual denotar a transformada de Fourier como a seguir
 
-  \[ g(u) = \mathfrak{F} (f(x)). \]
+  \[ g(u) = \DFT (f(x)). \]
 
   De maneira análoga, dado $g(u)$, podemos obter $f(x)$ através da transformada inversa de Fourier
   
@@ -33,7 +33,7 @@ Seção 7 de Ramirez, \textit{The FFT: Fundamentals and Concepts}~\cite{ramirez1
 
 que por sua vez pode ser denotada por
 
-  \[ f(x) = \mathfrak{F}^{-1} (g(u)). \]
+  \[ f(x) = \IFT (g(u)). \]
 
 %\vspace{1cm}
   
@@ -89,6 +89,52 @@ que por sua vez pode ser denotada por
 
 \end{easylist}
   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Propriedades}
+
+\begin{easylist}
+
+  & Adição linear: considere duas funções $a(x)$ e $b(x)$, e suas transformadas de Fourier $A(u)$ e $B(u)$. Temos que:
+
+  \[ \DFT(a(x) + b(x)) = A(u) + B(u) \]
+
+  Demonstração:
+
+  \[ \DFT(a(x) + b(x)) = \]
+
+  \[ \int^{\infty}_{-\infty} (a(x) + b(x)) e^{-j2\pi ux} dx = \]
+
+  \[ \int^{\infty}_{-\infty} a(x) e^{-j2\pi ux} dx + \int^{\infty}_{-\infty} b(x) e^{-j2\pi ux} dx = \]
+
+  \[ A(u) + B(u)) \]
+
+  
+  & Simetria: temos que:
+
+  \[ A(u) = \DFT(a(x)) \Leftrightarrow a(-u) = \DFT(A(x)) \]
+
+  Demonstração:
+
+  \[ A(u) = \DFT(a(x)) \]
+
+  \[ a(x) = \IFT(A(u)) \]
+
+  \[ a(x) = \int^{\infty}_{-\infty} A(u) e^{ j2\pi ux} du \]
+
+  \[ a(-x) = \int^{\infty}_{-\infty} A(u) e^{ -j2\pi ux} du \]
+
+  \[ a(-u) = \int^{\infty}_{-\infty} A(x) e^{ -j2\pi ux} dx \]
+
+  \[ a(-u) = \DFT(A(x)) \]
+   
+  Em sua versão discreta, a propriedade é um pouco diferente:  
+
+  \[ A(u) = \DFT(a(x)) \Leftrightarrow a(-u) = M \DFT(A(x)) \]
+
+
+\end{easylist}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\textit{Fast Fourier Transform}}
 
