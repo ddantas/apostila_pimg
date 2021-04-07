@@ -19,7 +19,7 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
   && Um exemplo de transformação para aumentar o contraste da imagem de entrada pode ser visto na Figura~\ref{fig:contrast}.
 
 
-  && \textit{Thresholding}: é como a transformação anterior levada ao extremo. Também aumenta o contraste, e a imagem de saída fica com apenas duas intensidades. Um exemplo dessa transformação pode ser visto na Figura~\ref{fig:thresh}.
+  && \textit{Thresholding}: é como a transformação anterior levada ao extremo. Também aumenta o contraste, e a imagem de saída fica com apenas duas intensidades. Um exemplo dessa transformação pode ser visto na Figura~\ref{fig:thresh}. A Figura~\ref{fig:lena_thresh} mostra um resultado dessa transformação.
 
 \end{easylist}
 
@@ -51,8 +51,10 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
 
 \begin{easylist}
 
-  & Negação: ver Figura~\ref{fig:gray2}.
+  & Negação: ver Figura~\ref{fig:gray2}. A Figura~\ref{fig:lena_neg} mostra um resultado dessa transformação.
   \[ s = L-1-r \]
+  & Mudança de contraste: a Figura~\ref{fig:lena_gray2} mostra um resultado dessa transformação. Um valor de $a$ maior que 1 aumenta o contraste, e menor que 1 diminui.
+  \[ s = a(r - b) + b  \]
   & Transformações logarítmicas: ver Figura~\ref{fig:gray2}.
   \[ s = c \log(1+r) \]
   & Transformações por potenciação: ver Figura~\ref{fig:power}.
@@ -118,6 +120,80 @@ Capítulo 3 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
   \[ T(r_k) = \sum_{j=0}^k p(r_j) = \sum_{j=0}^k \frac {n_j}{n} \]
   
 \end{easylist}
+
+
+\def\figw{0.45\textwidth}
+\def\scalei{0.24}
+\def\scaleh{0.18}
+
+
+\begin{figure}[!h]
+    \centering
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scalei]{images/03/lena_gray.png}
+            \caption{\label{fig:lena_gray:hist} Imagem}
+        \end{subfigure}
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scaleh]{images/03/hist_lena_gray.png}
+            \caption{\label{fig:lena_gray:hist} Histograma}
+        \end{subfigure}
+
+    \caption{\label{fig:lena_gray} Imagem original.}
+\end{figure}
+
+\begin{figure}[!h]
+    \def\figw{0.45\textwidth}
+    \centering
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scalei]{images/03/lena_gray2.png}
+            \caption{\label{fig:lena_gray2:hist} Imagem}
+        \end{subfigure}
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scaleh]{images/03/hist_lena_gray2.png}
+            \caption{\label{fig:lena_gray2:hist} Histograma}
+        \end{subfigure}
+
+    \caption{\label{fig:lena_gray2} Imagem com baixo contraste.}
+\end{figure}
+
+\begin{figure}[!h]
+    \def\figw{0.45\textwidth}
+    \centering
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scalei]{images/03/lena_neg.png}
+            \caption{\label{fig:lena_neg:hist} Imagem}
+        \end{subfigure}
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scaleh]{images/03/hist_lena_neg.png}
+            \caption{\label{fig:lena_neg:hist} Histograma}
+        \end{subfigure}
+
+    \caption{\label{fig:lena_neg} Imagem negativa.}
+\end{figure}
+
+\begin{figure}[!h]
+    \def\figw{0.45\textwidth}
+    \centering
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scalei]{images/03/lena_thresh.png}
+            \caption{\label{fig:lena_thresh:hist} Imagem}
+        \end{subfigure}
+        \begin{subfigure}{\figw}
+            \centering
+            \includegraphics[scale=\scaleh]{images/03/hist_lena_thresh.png}
+            \caption{\label{fig:lena_thresh:hist} Histograma}
+        \end{subfigure}
+
+    \caption{\label{fig:lena_thresh} Imagem limiarizada.}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

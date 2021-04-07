@@ -111,9 +111,18 @@ onde $L = 2^k$. $L$ é o intervalo dinâmico do sensor e $k$ é o número de bit
 \section{Relações entre pixels}
 
 \begin{easylist}
-& 4-adjacência: os vizinhos de $(x, y)$ são $(x, y-1)$, $(x, y+1)$, $(x-1, y)$ e $(x+1, y)$.
-& D-adjacência: os vizinhos de $(x, y)$ são $(x-1, y-1)$, $(x-1, y+1)$, $(x+1, y+1)$ e $(x+1, y-1)$.
-& 8-adjacência: os vizinhos de $(x, y)$ são a união da 4-adjacência e da D-adjacência.
+& Adjacência: é uma relação entre dois poxels com as propriedades listadas abaixo.
+\end{easylist}
+
+  \begin{align*}
+    & 1.\; A(p, q) \Leftrightarrow x \neq y  && \text{irreflexiva} \\
+    & 2.\; A(p, q) \Leftrightarrow A(q, p)   && \text{simétrica} \\
+  \end{align*}
+ 
+\begin{easylist}
+&& 4-adjacência: os vizinhos de $(x, y)$ são $(x, y-1)$, $(x, y+1)$, $(x-1, y)$ e $(x+1, y)$.
+&& D-adjacência: os vizinhos de $(x, y)$ são $(x-1, y-1)$, $(x-1, y+1)$, $(x+1, y+1)$ e $(x+1, y-1)$.
+&& 8-adjacência: os vizinhos de $(x, y)$ são a união da 4-adjacência e da D-adjacência.
 \end{easylist}
 
 \vspace{1cm}
@@ -134,7 +143,7 @@ onde $L = 2^k$. $L$ é o intervalo dinâmico do sensor e $k$ é o número de bit
 
 
 \begin{easylist}
-& Distância: é uma relação entre dois pixels $p$ e $q$ com as propriedades listadas abaixo.  
+& Distância: sejam $p$ e $q$ dois pixels pertencentes a $P$, uma distância é uma função $D:P\times P \rightarrow \mathbb{R}$ com as propriedades listadas abaixo.  
 \end{easylist}
 
   \begin{align*}

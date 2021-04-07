@@ -22,8 +22,29 @@ Capítulo 6 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
   & Caracterização da luz: três medidas podem ser usadas para caracterizar uma fonte de luz:
   && Radiância: energia que flui de uma fonte de luz, normalmente medida em watts (W).
   && Luminância: energia que pode ser vista por um observador, medida em lumens (lm). Uma fonte de luz infravermelha pode ter muita radiância, mas terá luminância praticamente nula.
-  && Brilho ou intensidade: descritor subjetivo que indica o quanto uma fonte de luz parece próxima ao branco. Uma fonte de luz verde ou amarela parece mais brilhante que uma azul ou vermelha.
+  && Brilho ou intensidade: descritor subjetivo que indica o quanto uma fonte de luz parece próxima ao branco. Uma fonte de luz verde ou amarela parece mais brilhante que uma azul ou vermelha. A Figura~\ref{fig:bright} mostra um exemplo de padrão de teste com barra de cores com os valores das cores antes e depois de a imagem ser convertida para escala de cinza. Observe como as cores mais brilhantes em~\ref{fig:bright:rgb} possuem valores maiores de brilho em~\ref{fig:bright:gray}.
 
+
+  \begin{figure}[!t]
+  \begin{subfigure}{1\textwidth}
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/06/SMPTE_Color_Bars_RGB.png}
+    \caption{\label{fig:bright:rgb} Exemplos de cores RGB}
+  \end{subfigure}
+  \begin{subfigure}{1\textwidth}
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/06/SMPTE_Color_Bars_gray.png}
+    \caption{\label{fig:bright:gray} Versão em escala de cinza com valores das intensidades.}
+  \end{subfigure}
+  \caption{\label{fig:bright} Padrão de teste com barras de cores.}
+  \source{Adaptado de \tt{https://en.wikipedia.org/wiki/SMPTE\UL color\UL bars}.}
+  \end{figure}
+
+
+  
+
+
+  
   \vspace{.5cm}
 
   & Outra maneira de caracterizar uma fonte de luz é quanto à presença ou ausência de cor:

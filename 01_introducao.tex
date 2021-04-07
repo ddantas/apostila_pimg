@@ -55,6 +55,7 @@ Capítulo 1 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
 
 \begin{easylist}
 & Aquisição
+&& Ao adquirir e salvar um conjunto de imagens, é preciso ter cuidado com o formato do arquivo e compressão usada. A depender do tipo de compressão, podem ocorrer perdas que comprometam o uso das imagens adquiridas. A Figura~\ref{fig:compress} mostra exemplos de artefatos de compressão. A Figura~\ref{fig:compress:25} foi obtida da compressão de~\ref{fig:compress:orig} em formato JPG com qualidade 25 usando o {\it software} GIMP. Os artefatos de compressão podem ser melhor observados em~\ref{fig:compress:orig:eye}. A Figura~\ref{fig:compress:12bit} foi obtida da compressão de~\ref{fig:compress:orig} pela redução da profundidade de cor, ou seja, ao invés de usar 8 bits, foram usados 4 bits por amostra, ou seja, um total de 12 bits por pixel. Esse efeito pode ser emulado no GIMP através do filtro {\it Posterize}. O efeito visual dessa perda de informação é conhecido como {\it color banding}.
 & Melhoramento (\textit{image enhancement)}
 & Restauração
 & Processamento de cores
@@ -65,6 +66,48 @@ Capítulo 1 de Gonzalez, \textit{Digital Image Processing}~\cite{gonzalez2006ima
 & Representação e descrição
 & Reconhecimento de objetos
 \end{easylist}
+
+
+\def\WORIG{.45\textwidth}
+\def\WDET{.525\textwidth}
+
+\begin{figure}[!t]
+  \begin{subfigure}{\WORIG}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_orig.png}
+    \caption{\label{fig:compress:orig} Figura original.}
+  \end{subfigure}
+  \begin{subfigure}{\WDET}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_orig_eye.png}
+    \caption{\label{fig:compress:orig:eye} Detalhe de (a).}
+  \end{subfigure}
+  
+  \begin{subfigure}{\WORIG}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_25.png}
+    \caption{\label{fig:compress:25} Versão JPG.}
+  \end{subfigure}
+  \begin{subfigure}{\WDET}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_25_eye.png}
+    \caption{\label{fig:compress:25:eye} Detalhe de (c).}
+  \end{subfigure}
+
+  \begin{subfigure}{\WORIG}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_12bit.png}
+    \caption{\label{fig:compress:12bit} Versão com 4 bits por amostra.}
+  \end{subfigure}
+  \begin{subfigure}{\WDET}
+    \centering
+    \includegraphics[width=1\textwidth]{images/01/lena_12bit_eye.png}
+    \caption{\label{fig:compress:12bit:eye} Detalhe de (e).}
+  \end{subfigure}
+
+  \caption{\label{fig:compress} Exemplos de artefatos de compressão.}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,16 @@
+lena_orig.png
+    Obtida de lena.tiff
+
+lena_25.png
+    Obtida do salvamento de lena.tiff em formato jpg com qualidade 25 no gimp
+
+lena_12bit_eye.png
+    Obtida do uso do filtro posterize com parâmetro 16 no gimp
+
+
+
+lena_orig_eye.png
+lena_25_eye.png
+lena_12bit_eye.png
+
+    Figuras obtidas do corte nas coordenadas (x, y) = (248, 240) + (56, 48)
