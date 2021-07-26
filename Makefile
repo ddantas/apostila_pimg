@@ -2,23 +2,26 @@
 FILENAME = pimg
 
 
-dvi: pimg.dvi
+all: $(FILENAME).pdf
 
-ps: pimg.ps
+dvi: $(FILENAME).dvi
 
-all: pimg.pdf
+ps: $(FILENAME).ps
 
-pimg.ps: pimg.dvi
+$(FILENAME).ps: $(FILENAME).dvi
 	dvips -o $(FILENAME).ps $(FILENAME).dvi
 
-pimg.pdf: *.tex
+$(FILENAME).pdf: *.tex
 	pdflatex $(FILENAME).tex
 	bibtex $(FILENAME)
 	pdflatex $(FILENAME).tex
 	pdflatex $(FILENAME).tex
 	evince $(FILENAME).pdf
 
-pimg.dvi: clean $(FILENAME).tex
+show:
+	evince $(FILENAME).pdf
+
+$(FILENAME).dvi: clean $(FILENAME).tex
 	echo "Running latex..."
 	latex $(FILENAME).tex
 	echo "Running makeindex..."
