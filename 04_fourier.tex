@@ -71,7 +71,7 @@ que por sua vez pode ser denotada por
 
   Nesse caso, a inversa pode ser calculada pela fórmula
 
-  \[ f(x, y) =             \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} g(u, v) e^{ j2\pi (ux/M + vy/N)} \].
+  \[ f(x, y) =             \sum^{M-1}_{u=0}\sum^{N-1}_{v=0} g(u, v) e^{ j2\pi (ux/M + vy/N)} \].
 
 %\clearpage
   
@@ -83,7 +83,7 @@ que por sua vez pode ser denotada por
 
   e sua inversa
 
-  \[ f(x, y) =             \sum^{M-1}_{x=0}\sum^{N-1}_{y=0} g(u, v)
+  \[ f(x, y) =             \sum^{M-1}_{u=0}\sum^{N-1}_{v=0} g(u, v)
       \cos\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right) +
      j\sin\left(2\pi \left(\frac{ux}{M} + \frac{vy}{N}\right)\right)   \]
 
@@ -150,7 +150,7 @@ que por sua vez pode ser denotada por
 
 para u de 0 a $M-1$.
   
-  & Seja $W = e^{-j2\pi/M}$. Omitindo o fator $1/M$, que pode ser aplicado no final do cálculo, e trocando $f$ por $f_0$, onde o índice subscrito denota o estágio do cálculo, teremos
+  & Seja $W = e^{j2\pi/M}$. Omitindo o fator $1/M$, que pode ser aplicado no final do cálculo, e trocando $f$ por $f_0$, onde o índice subscrito denota o estágio do cálculo, teremos
 
   \[ g(u) = \sum^{M-1}_{x=0} f_0(x) W^{-ux} \].
 
@@ -179,7 +179,7 @@ para u de 0 a $M-1$.
 
   & A Figura~\ref{fig:fft} mostra o esquema do cálculo da FFT de um vetor de tamanho $M = 16$. Cada conjunto de 4 setas saindo de um par $(f_k(r), f_k(s))$ e chegando em um par $(f_{k+1}(r), f_{k+1}(s))$, pelo seu formato, é chamado \textit{butterfly}.
 
-  & A diferença entre $s$ e $r$ diminui com o aumento de $k$ e é dada por $2^{K-k-1}$. Já o expoente $p$ começa sempre como 0 em cada grupo de \textit{butterflies} que se sobrepõem. O incremento do valor de $p$ depende de $k$ e é dado por $2^{k+1}$. A tabela~\ref{tab:fft} mostra os cálculos necessários para obter a FFT de um vetor de tamanho $M = 16$.
+  & A diferença entre $s$ e $r$ diminui com o aumento de $k$ e é dada por $2^{K-k-1}$. Já o expoente $p$ começa sempre como 0 em cada grupo de \textit{butterflies} que se sobrepõem. O incremento do valor de $p$ depende de $k$ e é dado por $2^{k}$. A tabela~\ref{tab:fft} mostra os cálculos necessários para obter a FFT de um vetor de tamanho $M = 16$.
 
 \end{easylist}
 
